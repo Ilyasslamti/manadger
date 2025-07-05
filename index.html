@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الماندجر | منظومة التطوير الرقمي الذكية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0e2b5c',
+                        secondary: '#1a56db',
+                        accent: '#00c9a7',
+                        dark: '#0f172a',
+                    },
+                    fontFamily: {
+                        'tajawal': ['Tajawal', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Tajawal', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(14,43,92,0.9) 0%, rgba(10,25,55,0.9) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .animated-bg {
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            background-image: linear-gradient(135deg, #0e2b5c, #1a56db, #00c9a7, #0e2b5c);
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-dark">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-secondary w-12 h-12 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-primary mr-3">الماندجر</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#vision" class="text-gray-600 hover:text-secondary font-medium">الرؤية</a>
+                <a href="#services" class="text-gray-600 hover:text-secondary font-medium">الخدمات</a>
+                <a href="#audience" class="text-gray-600 hover:text-secondary font-medium">العملاء</a>
+                <a href="#goal" class="text-gray-600 hover:text-secondary font-medium">الهدف</a>
+                <a href="#contact" class="text-gray-600 hover:text-secondary font-medium">اتصل بنا</a>
+            </nav>
+            
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-32 pb-20 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">منظومة التشغيل الذكي للتحول الرقمي</h2>
+                <p class="text-xl mb-8 leading-relaxed">المانادجر ليس مجرد خدمة، بل منظومة متكاملة تعتمد على الذكاء الاصطناعي، التشغيل الذاتي، التحليل الذكي، والتفكير التسويقي العميق لتمكين مؤسستك من بناء نفوذ رقمي قوي.</p>
+                <div class="flex space-x-4">
+                    <button class="bg-accent hover:bg-teal-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        ابدأ رحلتك الرقمية
+                    </button>
+                    <button class="bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                        تعرف على خدماتنا
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl p-6 w-80 h-80 flex items-center justify-center floating">
+                        <div class="text-center">
+                            <i class="fas fa-robot text-6xl text-accent mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">الذكاء الاصطناعي</h3>
+                            <p class="text-lg">لإدارة وتحليل وتطوير مؤسستك</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -right-6 bg-secondary rounded-xl p-4 w-40 h-40 floating" style="animation-delay: 1.5s;">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line text-3xl text-white mb-2"></i>
+                            <p class="text-white font-bold">تحليل ذكي</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-accent rounded-xl p-4 w-40 h-40 floating" style="animation-delay: 2.5s;">
+                        <div class="text-center">
+                            <i class="fas fa-cogs text-3xl text-white mb-2"></i>
+                            <p class="text-white font-bold">تشغيل ذاتي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">رؤيتنا</h2>
+                <div class="h-1 w-24 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        نؤمن في الماندجر بأن التحول الرقمي ليس مجرد إضافة تقنية، بل هو بناء منظومة متكاملة تعمل بذكاء واستقلالية. هدفنا تمكين المؤسسات من تحقيق النمو المستدام بأقل التكاليف من خلال توظيف الذكاء الاصطناعي والتشغيل الذاتي.
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        نسعى لخلق بيئة رقمية ذكية تمكن عملائنا من التركيز على جوهر أعمالهم بينما نتحمل نحن مسؤولية البنية التحتية الرقمية والتسويقية والتشغيلية.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-bullseye text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary">الهدف الاستراتيجي</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">
+                        تمكين أي جهة من بناء منظومة تشغيلية ذكية ومستقلة تعتمد على النفوذ الرقمي، التشغيل الذاتي، النمو العضوي، والذكاء الاصطناعي.
+                    </p>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-rocket text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent">الرسالة الأساسية</h3>
+                    </div>
+                    <p class="text-gray-700 mt-6">
+                        تقديم حلول رقمية متكاملة ترفع المبيعات، تحسن التواصل، وتزيد التأثير بأقل التكاليف الممكنة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">خدماتنا المتكاملة</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نقدم مجموعة متكاملة من الحلول الرقمية الذكية التي تغطي جميع جوانب عملك الرقمي</p>
+                <div class="h-1 w-24 bg-accent mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-gray-50 rounded-2xl p-8 shadow-lg transition-all duration-300">
+                    <div class="bg-primary w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">التسيير الرقمي الشامل</h3>
+                    <p class="text-gray-700 mb-4">بناء الحضور الرقمي من الصفر أو تطويره، إدارة المواقع والمتاجر والصفحات والمحتوى والبيانات.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            تصميم أنظمة تشغيلية تعتمد على التشغيل الذاتي
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            إدارة متكاملة للوجود الرقمي
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-gray-50 rounded-2xl p-8 shadow-lg transition-all duration-300">
+                    <div class="bg-secondary w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">ذكاء المبيعات</h3>
+                    <p class="text-gray-700 mb-4">تحليل السوق والعملاء المحتملين، تصميم عروض بيع لا تُقاوم، تطوير استراتيجيات إقناع وتوجيه.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            بناء قنوات بيع بدون إعلانات ممولة
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            استراتيجيات مبنية على سلوك المستهلك
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-gray-50 rounded-2xl p-8 shadow-lg transition-all duration-300">
+                    <div class="bg-accent w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">المساعدات الذكية</h3>
+                    <p class="text-gray-700 mb-4">روبوتات دردشة مخصصة للمجال، روبوتات ترد تلقائيًا على استفسارات الزبناء وتحلل احتياجاتهم.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            سكربتات ذكاء اصطناعي لصياغة المحتوى
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                            تقييم الأداء ومتابعة النتائج تلقائيًا
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- More services would go here... -->
+            </div>
+            
+            <div class="text-center mt-16">
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300 flex items-center mx-auto">
+                    اكتشف جميع خدماتنا
+                    <i class="fas fa-arrow-left ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section id="audience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">الفئات التي نخدمها</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نقدم حلولنا المبتكرة لمجموعة واسعة من العملاء في مختلف القطاعات</p>
+                <div class="h-1 w-24 bg-accent mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="bg-primary bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hands-helping text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">الجمعيات والتعاونيات</h3>
+                    <p class="text-gray-600">حلول رقمية لتعزيز التواصل وزيادة التأثير المجتمعي</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="bg-secondary bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hospital text-secondary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">المؤسسات الصحية</h3>
+                    <p class="text-gray-600">أنظمة ذكية لإدارة التواصل مع المرضى والمتابعة</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="bg-accent bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-utensils text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">المطاعم والمحلات</h3>
+                    <p class="text-gray-600">حلول تسويقية ذكية لزيادة المبيعات والولاء</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="bg-primary bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-newspaper text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">الصحف والمجلات</h3>
+                    <p class="text-gray-600">أنظمة إدارة محتوى وتحليل أداء متطورة</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+                <div class="flex items-center">
+                    <div class="bg-accent w-16 h-16 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary">أي مقاولة أو شخص يرغب في التحول الرقمي</h3>
+                </div>
+                <p class="text-gray-700 mt-4 text-lg">
+                    نقدم حلولاً مخصصة لتحويل مشروعك إلى "نظام ربحي رقمي" يعمل بكفاءة واستقلالية، بغض النظر عن حجم أو طبيعة عملك.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goal Section -->
+    <section id="goal" class="py-20 animated-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold mb-6">هدفنا النهائي</h2>
+                <p class="text-xl mb-8 leading-relaxed">
+                    تمكين أي جهة من بناء منظومة تشغيلية ذكية ومستقلة تعتمد على:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl p-6">
+                        <i class="fas fa-chess-king text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">النفوذ الرقمي</h3>
+                        <p>بناء حضور قوي ومؤثر في الفضاء الرقمي</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl p-6">
+                        <i class="fas fa-cogs text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">التشغيل الذاتي</h3>
+                        <p>أنظمة تعمل بكفاءة دون تدخل مستمر</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl p-6">
+                        <i class="fas fa-seedling text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">النمو العضوي</h3>
+                        <p>زيادة المبيعات دون تكاليف إعلانية باهظة</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 backdrop-blur-lg rounded-xl p-6">
+                        <i class="fas fa-brain text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">الذكاء الاصطناعي</h3>
+                        <p>استخدام أحدث تقنيات الذكاء الاصطناعي</p>
+                    </div>
+                </div>
+                
+                <button class="mt-12 bg-white text-primary font-bold py-3 px-8 rounded-lg transition duration-300 hover:bg-gray-100">
+                    ابدأ رحلتك نحو التميز الرقمي
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-primary mb-4">تواصل معنا</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نحن هنا لمساعدتك في بناء منظومتك الرقمية الذكية</p>
+                <div class="h-1 w-24 bg-accent mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2">الاسم الكامل</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2">الموضوع</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2">الرسالة</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"></textarea>
+                        </div>
+                        
+                        <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-primary mb-6">معلومات التواصل</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary w-12 h-12 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="mr-4">
+                                    <h4 class="font-bold text-lg text-gray-800">العنوان</h4>
+                                    <p class="text-gray-600">الرباط، المغرب</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary w-12 h-12 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-phone-alt text-white"></i>
+                                </div>
+                                <div class="mr-4">
+                                    <h4 class="font-bold text-lg text-gray-800">الهاتف</h4>
+                                    <p class="text-gray-600">+212 6 12 34 56 78</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent w-12 h-12 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div class="mr-4">
+                                    <h4 class="font-bold text-lg text-gray-800">البريد الإلكتروني</h4>
+                                    <p class="text-gray-600">info@manadger.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-bold text-lg text-gray-800 mb-4">تابعنا على</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-primary w-12 h-12 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-secondary w-12 h-12 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-accent w-12 h-12 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in text-gray-600 hover:text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-pink-600 w-12 h-12 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-instagram text-gray-600 hover:text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-white w-12 h-12 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold mr-3">الماندجر</h2>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        منظومة متكاملة تعتمد على الذكاء الاصطناعي، التشغيل الذاتي، التحليل الذكي والتفكير التسويقي العميق لتمكين مؤسستك من النمو الرقمي.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">روابط سريعة</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">الرئيسية</a></li>
+                        <li><a href="#vision" class="text-gray-300 hover:text-white transition duration-300">رؤيتنا</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">الخدمات</a></li>
+                        <li><a href="#audience" class="text-gray-300 hover:text-white transition duration-300">العملاء</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">الخدمات</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">التسيير الرقمي الشامل</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">ذكاء المبيعات</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">المساعدات الذكية</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">التسويق بدون إعلانات</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">النشرة البريدية</h3>
+                    <p class="text-gray-300 mb-4">اشترك ليصلك كل جديد عن حلولنا وخدماتنا</p>
+                    <div class="flex">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="px-4 py-3 w-full rounded-l-lg focus:outline-none text-gray-800">
+                        <button class="bg-accent hover:bg-teal-500 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>جميع الحقوق محفوظة © 2023 شركة الماندجر للتطوير وحلول الويب</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for service cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            serviceCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=ilyasslamti/manadger" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
